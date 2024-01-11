@@ -42,6 +42,7 @@ app.MapCounterEndpoints();
 app.MapWeatherEndpoints();
 app.MapCocktailEndpoints();
 app.MapPhotosEndpoints();
+app.MapLoginEndpoints();
 app.MapControllers();
 
 app.Run();

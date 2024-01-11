@@ -1,0 +1,27 @@
+@if (_emailValid)
+{
+    <ul hx-trigger="change" hx-post="/login/customer" hx-target="#buttons">
+        <li><input type="radio" name="Customer" value="Customer01"/>Customer01</li>
+        <li><input type="radio" name="Customer" value="Customer02"/>Customer02</li>
+        <li><input type="radio" name="Customer" value="Customer03"/>Customer03</li>
+    </ul>
+}
+else 
+{
+    <div>Please enter a valid email</div>
+}
+
+@code {
+    [Parameter]
+    public string Email { get; set; } = "";
+
+    private bool _emailValid = false;
+
+    protected override void OnInitialized()
+    {
+        if (Email == "test.user@gmail.com")
+        {
+            _emailValid = true;
+        }
+    }
+}
