@@ -1,11 +1,11 @@
 @page "/login"
 @using Microsoft.AspNetCore.Components.Forms
 
-<form id="LoginForm">
-    <AntiforgeryToken/>
-    <input type="email" name="Email" hx-post="/login/check" hx-trigger="keyup changed delay:500ms" hx-target="#customers" />
-    <div id="customers"></div>
-    <div id="buttons">
-        <button class="btn btn-primary disabled">Login</button>
-    </div>
-</form>
+<div id="LoginForm">
+    <form method="get" action="/login/go" hx-target="#LoginForm">
+        <label for="Email">Login</label>
+        <input type="email" name="Email" hx-get="/login/check" hx-trigger="keyup changed delay:500ms" hx-target="#customers" />
+        <span id="customers"></span>
+        <span id="actions"></span>
+    </form>    
+</div>

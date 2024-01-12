@@ -1,0 +1,14 @@
+@using Microsoft.AspNetCore.Components.Forms
+
+<label for="Customer">to customer</label>
+<select name="Customer" hx-get="/login/customer" hx-target="#actions" hx-trigger="change">
+    <option selected disabled>Choose a customer...</option>
+@foreach (string customer in Customers){
+    <option value="@customer">@customer</option>
+}
+</select>
+
+@code {
+    [Parameter]
+    public string[] Customers { get; set; } = [];
+}
