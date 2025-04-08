@@ -1,6 +1,8 @@
 @inject IHttpContextAccessor contextAccessor
 
-Current count: @_state.CurrentCount
+<span hx-get="/api/counter" hx-trigger="counter-updated from:body">
+    Current count: @_state.CurrentCount
+</span>
 
 @code {
     private CounterState _state;

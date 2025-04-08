@@ -1,24 +1,33 @@
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var forecast in Forecasts)
-            {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
-            }        
-        </tbody>
-    </table>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>Temp. (C)</th>
+        <th>Temp. (F)</th>
+        <th>Summary</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var forecast in Forecasts)
+    {
+        <tr>
+            <td>@forecast.Date.ToShortDateString()</td>
+            <td>@forecast.TemperatureC</td>
+            <td>@forecast.TemperatureF</td>
+            <td>@forecast.Summary</td>
+            <td>
+
+            </td>
+        </tr>
+    }        
+    </tbody>
+</table>
+
+<button onclick="window.my_modal.showModal();" class="btn btn-primary">More...</button>
+<dialog id="my_modal">
+    <button onclick="window.my_modal.close();">close</button>
+</dialog>
 
 @code {
     [Parameter]

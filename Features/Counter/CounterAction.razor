@@ -1,0 +1,5 @@
+<button class="btn btn-primary" hx-post="/api/counter/@Increment" hx-swap="outerHTML">Click me</button>
+
+@code {
+    [Parameter] public int Increment { get; set; }
+}
