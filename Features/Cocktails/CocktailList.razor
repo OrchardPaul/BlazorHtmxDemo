@@ -1,3 +1,5 @@
+@page "/cocktails/search"
+@layout Components.Layout.HtmxResponse
 @inject CocktailsService CocktailsService
 
 <section id="cocktail-list">
@@ -21,6 +23,7 @@
 
 @code
 {
+    [SupplyParameterFromQuery]
     [Parameter]
     public string? Search { get; set; }
 

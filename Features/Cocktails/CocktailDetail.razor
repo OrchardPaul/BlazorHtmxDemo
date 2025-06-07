@@ -1,14 +1,18 @@
+@page "/cocktails/detail/{CocktailId:int}"
+@layout Components.Layout.HtmxResponse
+@inject CocktailsService CocktailsService
+
 <section id="cocktail-detail">
-    @if (Cocktail != null)
+    @if (_cocktail != null)
     {
         <div class="row">
             <section class="cocktail-ingredients col-8">
-                <h3>@Cocktail.Name</h3>
-                <div>Glass: @Cocktail.Glass</div>
+                <h3>@_cocktail.Name</h3>
+                <div>Glass: @_cocktail.Glass</div>
                 <div>
                     Ingredients:
                     <ul>
-                        @foreach (var ingredient in Cocktail.Ingredients)
+                        @foreach (var ingredient in _cocktail.Ingredients)
                         {
                             <li>@ingredient.Measure @ingredient.Name</li>
 
@@ -17,10 +21,10 @@
                     </ul>
                 </div>
                 <div>Instructions</div>
-                <div>@Cocktail.Instructions</div>
+                <div>@_cocktail.Instructions</div>
             </section>
             <div class="cocktail-photo col-4">
-                <img src="@Cocktail.Thumbnail" alt="Photo of @Cocktail.Name" />
+                <img src="@_cocktail.Thumbnail" alt="Photo of @_cocktail.Name" />
             </div>
         </div>
     }    
@@ -28,5 +32,13 @@
 
 @code {
     [Parameter]
-    public Cocktail? Cocktail { get; set; }
+    public int CocktailId { get; set; }
+    
+    private Cocktail? _cocktail;
+
+    protected override void OnInitialized()
+    {
+        _cocktail = CocktailsService.GetDrink(CocktailId);
+    }
+
 }

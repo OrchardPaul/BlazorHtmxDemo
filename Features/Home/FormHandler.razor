@@ -1,0 +1,36 @@
+@page "/FormDemo"
+@layout Components.Layout.HtmxResponse
+@using Microsoft.AspNetCore.Components.Forms
+
+<h3>FormDemo</h3>
+
+@if (Name is { Length: >0 } name)
+{
+    <h2>@name</h2>
+}
+else
+{
+    <h2>Welcome to your new app.</h2>
+}
+
+<div class="my-2">
+    <hr>
+    <form hx-post="/formdemo" @formname="main" hx-target="closest article">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" 
+                   name="name" placeholder="Say your name...">
+            <button
+                id="button-addon2"
+                class="btn btn-outline-secondary"
+                type="submit">
+                Say Hello
+            </button>
+        </div>
+        <AntiforgeryToken/>
+    </form>
+</div>
+
+@code
+{
+    [SupplyParameterFromForm] public string? Name { get; set; }
+}
