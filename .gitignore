@@ -4,6 +4,6 @@ publish/*
 .vscode/*
 node_modules/*
 /.vs
-/BlazorHtmxDemo.csproj.user
+/RosieTaylorBranding.csproj.user
 
-.idea/.idea.BlazorHtmxDemo/.idea/
+.idea/.idea.RosieTaylorBranding/.idea/

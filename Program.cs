@@ -1,14 +1,11 @@
-using BlazorHtmxDemo.Components;
-using BlazorHtmxDemo.Features.Cocktails;
-using BlazorHtmxDemo.Features.Photos;
+
+using RosieTaylorBranding.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddMemoryCache();
 builder.Services.AddHttpClient();
-builder.Services.AddTransient<CocktailsService>();
-builder.Services.AddTransient<PhotosService>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
@@ -37,11 +34,6 @@ app.UseSession();
 app.MapRazorComponents<App>();
 
 app.MapHomeEndpoints();
-app.MapMenuEndpoints();
-app.MapCounterEndpoints();
-app.MapWeatherEndpoints();
-app.MapCocktailEndpoints();
-app.MapPhotosEndpoints();
 app.MapControllers();
 app.MapStaticAssets();
 

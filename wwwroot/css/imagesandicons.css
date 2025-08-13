@@ -1,0 +1,11 @@
+.text-primarycol svg,
+svg.text-primarycol {
+    color: hsl(var(--primarycol)) !important;
+    fill: currentColor !important;
+}
+
+.text-secondarycol svg,
+svg.text-secondarycol {
+    color: hsl(var(--secondarycol)) !important;
+    fill: currentColor !important;
+}
