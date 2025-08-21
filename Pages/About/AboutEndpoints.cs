@@ -14,7 +14,7 @@ public static class AboutEndpoints
                     var clientETag = context.Request.Headers.IfNoneMatch;
 
                     // If client has current version, return 304 Not Modified
-                    if (clientETag == currentVersion)
+                    if (clientETag == currentVersion) 
                     {
                         context.Response.StatusCode = 304;
                         return Results.StatusCode(304);
