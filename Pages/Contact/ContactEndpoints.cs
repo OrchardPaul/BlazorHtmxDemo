@@ -1,20 +1,20 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 
-namespace RosieTaylorBranding.Pages.Home;
+namespace RosieTaylorBranding.Pages.Contact;
 
-public static class HomeEndpoints
+public static class ContactEndpoints
 {
-    public static WebApplication MapHomeEndpoints(this WebApplication app)
+    public static WebApplication MapContactEndpoints(this WebApplication app)
     {
         app.MapGet(
-                "/api/home",
+                "/api/contact",
                 (HttpContext context) =>
                 {
-                    const string currentVersion = "\"home-v1.3\"";
+                    const string currentVersion = "\"contact-v1.0\"";
                     var clientETag = context.Request.Headers.IfNoneMatch;
 
                     // If client has current version, return 304 Not Modified
-                    if (clientETag.Contains(currentVersion))
+                    if (clientETag == currentVersion)
                     {
                         context.Response.StatusCode = 304;
                         return Results.StatusCode(304);
@@ -24,10 +24,10 @@ public static class HomeEndpoints
                         $"public, max-age={(int)TimeSpan.FromMinutes(0.1).TotalSeconds}";
                     context.Response.Headers.ETag = currentVersion; // Version your content
 
-                    return new RazorComponentResult<HomePage>();
+                    return new RazorComponentResult<ContactPage>();
                 }
             )
-            .WithName("Home");
+            .WithName("Contact");
 
         return app;
     }

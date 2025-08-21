@@ -15,7 +15,7 @@
         new NavItem("Portfolio", "#portfolio"),
         new NavItem("Process", "#process"),
         new NavItem("Testimonials", "#testimonials"),
-        new NavItem("Contact", "#contact"),
+        new NavItem("Contact", "/contact"),
     };
 
     private void SetIsMenuOpen(bool value)
@@ -37,16 +37,30 @@
 
           @* Desktop Navigation *@
           <nav class="hidden md-flex items-center space-x-8">
-            @foreach (var item in navItems)
-            {
-              <a
-                key="@item.Label"
-                href="@item.Href"
+            <a
+                hx-get="/api/home"
+                hx-target="#content"
+                hx-swap="innerHTML"
                 class="text-muted-foreground hover-text-primarycol transition-colors font-medium"
               >
-                @item.Label
+                Home
               </a>
-            }
+              <a
+                hx-get="/api/about"
+                hx-target="#content"
+                hx-swap="innerHTML"
+                class="text-muted-foreground hover-text-primarycol transition-colors font-medium"
+              >
+                About
+              </a>
+              <a
+                hx-get="/api/contact"
+                hx-target="#content"
+                hx-swap="innerHTML"
+                class="text-muted-foreground hover-text-primarycol transition-colors font-medium"
+              >
+                Contact
+              </a>
           </nav>
 
           <div class="flex items-center gap-4">

@@ -1,10 +1,14 @@
 @page "/session"
+@using Microsoft.AspNetCore.Http
 @inject IHttpContextAccessor contextAccessor
 
-@foreach (var key in contextAccessor.HttpContext.Session.Keys)
+@if (contextAccessor.HttpContext != null && contextAccessor.HttpContext.Session != null)
 {
-    <div>
-        <h1>@key</h1>
-        <div>@contextAccessor.HttpContext.Session.GetString(key)</div>
-    </div>
+    foreach (var key in contextAccessor.HttpContext.Session.Keys)
+    {
+        <div>
+            <h1>@key</h1>
+            <div>@contextAccessor.HttpContext.Session.GetString(key)</div>
+        </div>
+    }
 }
