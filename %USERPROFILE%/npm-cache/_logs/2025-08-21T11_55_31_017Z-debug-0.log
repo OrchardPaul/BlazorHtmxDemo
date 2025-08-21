@@ -1,0 +1,19 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.0
+2 info using node@v22.12.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Development\HTMX\RosieTaylorBranding\.npmrc
+5 silly config load:file:C:\Users\ptayl\.npmrc
+6 silly config load:file:C:\Development\HTMX\RosieTaylorBranding\%USERPROFILE%\npm\etc\npmrc
+7 verbose title npm exec tailwindcss@3.3.3 init
+8 verbose argv "exec" "--" "tailwindcss@3.3.3" "init"
+9 verbose logfile logs-max:10 dir:C:\Development\HTMX\RosieTaylorBranding\%USERPROFILE%\npm-cache\_logs\2025-08-21T11_55_31_017Z-
+10 verbose logfile C:\Development\HTMX\RosieTaylorBranding\%USERPROFILE%\npm-cache\_logs\2025-08-21T11_55_31_017Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+13 verbose cwd C:\Development\HTMX\RosieTaylorBranding
+14 verbose os Windows_NT 10.0.26100
+15 verbose node v22.12.0
+16 verbose npm  v10.9.0
+17 verbose exit 0
+18 info ok

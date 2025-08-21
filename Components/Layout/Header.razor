@@ -4,6 +4,10 @@
  * This component renders the header with navigation and branding.
  */
 
+@using RosieTaylorBranding.Components.Features.UI
+
+
+
 @code{
     private bool IsMenuOpen = false;
     private readonly string Message = "Welcome to Rosie Taylor Branding!";
@@ -29,19 +33,19 @@
       <div class="container">
         <div class="flex items-center justify-between h-16">
           <div class="font-bold text-xl">
-            <span class="text-gradient-primarycol-to-secondarycol">
+            <span class="bg-gradient-to-r from-primarycol to-secondarycol bg-clip-text text-transparent">
               Rosie Taylor
             </span>
             <span class="text-foreground"> Branding</span>
           </div>
 
           @* Desktop Navigation *@
-          <nav class="hidden md-flex items-center space-x-8">
+          <nav class="hidden md:flex items-center space-x-8">
             <a
                 hx-get="/api/home"
                 hx-target="#content"
                 hx-swap="innerHTML"
-                class="text-muted-foreground hover-text-primarycol transition-colors font-medium"
+                class="text-muted-foreground hover:text-primarycol transition-colors font-medium"
               >
                 Home
               </a>
@@ -49,7 +53,7 @@
                 hx-get="/api/about"
                 hx-target="#content"
                 hx-swap="innerHTML"
-                class="text-muted-foreground hover-text-primarycol transition-colors font-medium"
+                class="text-muted-foreground hover:text-primarycol transition-colors font-medium"
               >
                 About
               </a>
@@ -57,16 +61,16 @@
                 hx-get="/api/contact"
                 hx-target="#content"
                 hx-swap="innerHTML"
-                class="text-muted-foreground hover-text-primarycol transition-colors font-medium"
+                class="text-muted-foreground hover:text-primarycol transition-colors font-medium"
               >
                 Contact
               </a>
           </nav>
 
           <div class="flex items-center gap-4">
-            @* <ThemeToggle /> *@
+            <ThemeToggle />
             <button
-              class="hidden md-inline-flex btn-primarycol border-none"
+              class="hidden md:inline-flex btn-primarycol border-none"
               size="sm"
             >
               Get Started
@@ -76,7 +80,7 @@
             <button
               variant="ghost"
               size="sm"
-              class="md-hidden"
+              class="md:hidden"
               onclick="SetIsMenuOpen(!IsMenuOpen)"
             >
                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
@@ -89,14 +93,14 @@
         @* Mobile Navigation *@
         @if(IsMenuOpen)
         {
-          <nav class="md-hidden py-4 border-t">
+          <nav class="md:hidden py-4 border-t">
             <div class="space-y-4">
               @foreach (var item in navItems)
               {
                 <a
                   key="@item.Label"
                   href="@item.Href"
-                  class="block text-muted-foreground hover-text-primarycol transition-colors font-medium"
+                  class="block text-muted-foreground hover:text-primarycol transition-colors font-medium"
                   onclick="SetIsMenuOpen(false)"
                 >
                   @item.Label

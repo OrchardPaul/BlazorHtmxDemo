@@ -1,77 +1,81 @@
 @using MudBlazor
 
-    <section id="about" class="section bg-card">
-      <div class="container">
-        <div class="grid grid-2-cols items-center">
-          <div class="relative">
-            @* <Image
-              src={aboutHero}
-              alt="Rosie Taylor working on brand design"
-              class="rounded-2xl shadow-lg w-full"
-            /> *@
-            <div class="absolute gradient-bottom-left w-full bg-gradient-primarycol-secondarycol rounded-2xl z-behind"></div>
-          </div>
-
-          <div class="space-y-8">
-            <div class="space-y-4">
-              <h2 class="text-4xl font-bold">
-                Personal branding that 
-                <span class="text-gradient-primarycol-to-secondarycol">
-                  tells your story
-                </span>
-              </h2>
-              <p class="text-lg text-muted-foreground leading-relaxed">
-                I believe every small business has a unique story worth telling. My approach is deeply personal - 
-                I take the time to understand your business goals, values, and vision before crafting a brand 
-                identity that truly represents who you are.
-              </p>
+<section id="about" class="py-16 bg-card">
+    <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="relative">
+                @* <Image
+                  src={aboutHero}
+                  alt="Rosie Taylor working on brand design"
+                  class="rounded-2xl shadow-lg w-full"
+                /> *@
+                <!-- Placeholder for image -->
+                <div class="w-full h-96 bg-gradient-to-br from-primarycol/20 to-secondarycol/20 rounded-2xl shadow-lg flex items-center justify-center">
+                    <span class="text-muted-foreground">About Image</span>
+                </div>
+                <!-- Gradient background effect -->
+                <div class="absolute inset-4 bg-gradient-to-tl from-primarycol to-secondarycol rounded-2xl -z-10 opacity-20"></div>
             </div>
 
-            <div class="space-y-6">
-              <div class="flex gap-4">
-                <div class="flex-shrink-0">
-                  <div class="w-12 h-12 bg-primarycol-10  rounded-lg flex justify-center items-center">
-                    <MudIcon Icon="@Icons.Material.Filled.People" Class="h-6 w-6 text-primarycol" />
-                  </div>
+            <div class="space-y-8">
+                <div class="space-y-4">
+                    <h2 class="text-4xl font-bold">
+                        Personal branding that 
+                        <span class="bg-gradient-to-r from-primarycol to-secondarycol bg-clip-text text-transparent">
+                            tells your story
+                        </span>
+                    </h2>
+                    <p class="text-lg text-muted-foreground leading-relaxed">
+                        I believe every small business has a unique story worth telling. My approach is deeply personal - 
+                        I take the time to understand your business goals, values, and vision before crafting a brand 
+                        identity that truly represents who you are.
+                    </p>
                 </div>
-                <div>
-                  <h3 class="font-semibold text-lg mb-2">Personal Connection</h3>
-                  <p class="text-muted-foreground">
-                    I work closely with each client to understand their unique business needs and personal vision.
-                  </p>
-                </div>
-              </div>
 
-              <div class="flex gap-4">
-                <div class="flex-shrink-0">
-                  <div class="w-12 h-12 bg-secondarycol-10 rounded-lg flex justify-center items-center">
-                    <MudIcon Icon="@Icons.Material.Filled.GpsFixed" class="h-6 w-6 text-secondarycol" />
-                  </div>
-                </div>
-                <div>
-                  <h3 class="font-semibold text-lg mb-2">Strategic Approach</h3>
-                  <p class="text-muted-foreground">
-                    Every brand decision is made with your business goals and target audience in mind.
-                  </p>
-                </div>
-              </div>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-primarycol/10 rounded-lg flex justify-center items-center">
+                                <MudIcon Icon="@Icons.Material.Filled.People" Class="h-6 w-6 text-primarycol" />
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-2">Personal Connection</h3>
+                            <p class="text-muted-foreground">
+                                I work closely with each client to understand their unique business needs and personal vision.
+                            </p>
+                        </div>
+                    </div>
 
-              <div class="flex gap-4">
-                <div class="flex-shrink-0">
-                  <div class="w-12 h-12 bg-primarycol-10 rounded-lg flex justify-center items-center">
-                    <MudIcon Icon="@Icons.Material.Filled.Verified" class="h-6 w-6 text-primarycol" />
-                  </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-secondarycol/10 rounded-lg flex justify-center items-center">
+                                <MudIcon Icon="@Icons.Material.Filled.GpsFixed" class="h-6 w-6 text-secondarycol" />
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-2">Strategic Approach</h3>
+                            <p class="text-muted-foreground">
+                                Every brand decision is made with your business goals and target audience in mind.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-primarycol/10 rounded-lg flex justify-center items-center">
+                                <MudIcon Icon="@Icons.Material.Filled.Verified" class="h-6 w-6 text-primarycol" />
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-2">Proven Results</h3>
+                            <p class="text-muted-foreground">
+                                Five years of helping UK small businesses grow through effective branding and marketing.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                  <h3 class="font-semibold text-lg mb-2">Proven Results</h3>
-                  <p class="text-muted-foreground">
-                    Five years of helping UK small businesses grow through effective branding and marketing.
-                  </p>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
- 
+    </div>
+</section>

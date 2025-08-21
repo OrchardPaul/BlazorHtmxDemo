@@ -1,0 +1,168 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.0
+2 info using node@v22.12.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Development\HTMX\RosieTaylorBranding\.npmrc
+5 silly config load:file:C:\Users\ptayl\.npmrc
+6 silly config load:file:C:\Development\HTMX\RosieTaylorBranding\%USERPROFILE%\npm\etc\npmrc
+7 verbose title npm install tailwindcss@^3.4.0
+8 verbose argv "install" "--save-dev" "tailwindcss@^3.4.0"
+9 verbose logfile logs-max:10 dir:C:\Development\HTMX\RosieTaylorBranding\%USERPROFILE%\npm-cache\_logs\2025-08-21T11_56_08_148Z-
+10 verbose logfile C:\Development\HTMX\RosieTaylorBranding\%USERPROFILE%\npm-cache\_logs\2025-08-21T11_56_08_148Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+13 silly idealTree buildDeps
+14 silly fetch manifest tailwindcss@^3.4.0
+15 silly packumentCache full:https://registry.npmjs.org/tailwindcss cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/tailwindcss 78ms (cache hit)
+17 silly packumentCache full:https://registry.npmjs.org/tailwindcss set size:9384985 disposed:false
+18 silly placeDep ROOT tailwindcss@3.4.17 REPLACE for: rosietaylorbranding@1.0.0 want: ^3.4.0
+19 silly fetch manifest lilconfig@^3.1.3
+20 silly packumentCache full:https://registry.npmjs.org/lilconfig cache-miss
+21 http fetch GET 200 https://registry.npmjs.org/lilconfig 20ms (cache hit)
+22 silly packumentCache full:https://registry.npmjs.org/lilconfig set size:45636 disposed:false
+23 silly placeDep ROOT lilconfig@3.1.3 OK for: tailwindcss@3.4.17 want: ^3.1.3
+24 silly reify mark retired [
+24 silly reify   'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\lilconfig'
+24 silly reify ]
+25 silly reify mark retired [
+25 silly reify   'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\postcss-load-config\\node_modules\\lilconfig'
+25 silly reify ]
+26 silly reify mark retired [
+26 silly reify   'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\tailwindcss',
+26 silly reify   'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.bin\\tailwind',
+26 silly reify   'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.bin\\tailwind.cmd',
+26 silly reify   'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.bin\\tailwind.ps1',
+26 silly reify   'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.bin\\tailwindcss',
+26 silly reify   'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.bin\\tailwindcss.cmd',
+26 silly reify   'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.bin\\tailwindcss.ps1'
+26 silly reify ]
+27 silly reify moves {
+27 silly reify   'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\lilconfig': 'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.lilconfig-B7xtrcpK',
+27 silly reify   'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\postcss-load-config\\node_modules\\lilconfig': 'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\postcss-load-config\\node_modules\\.lilconfig-ei6YAhZP',
+27 silly reify   'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\tailwindcss': 'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.tailwindcss-koKVxfo9',
+27 silly reify   'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.bin\\tailwind': 'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.bin\\.tailwind-J6NILwbJ',
+27 silly reify   'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.bin\\tailwind.cmd': 'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.bin\\.tailwind.cmd-ma3j8ZPc',
+27 silly reify   'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.bin\\tailwind.ps1': 'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.bin\\.tailwind.ps1-b4wFt8lm',
+27 silly reify   'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.bin\\tailwindcss': 'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.bin\\.tailwindcss-m4IxyG3C',
+27 silly reify   'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.bin\\tailwindcss.cmd': 'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.bin\\.tailwindcss.cmd-gvPx5YyH',
+27 silly reify   'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.bin\\tailwindcss.ps1': 'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\.bin\\.tailwindcss.ps1-053ZxFi5'
+27 silly reify }
+28 silly audit bulk request {
+28 silly audit   '@alloc/quick-lru': [ '5.2.0' ],
+28 silly audit   '@isaacs/cliui': [ '8.0.2' ],
+28 silly audit   '@jridgewell/gen-mapping': [ '0.3.13' ],
+28 silly audit   '@jridgewell/resolve-uri': [ '3.1.2' ],
+28 silly audit   '@jridgewell/sourcemap-codec': [ '1.5.5' ],
+28 silly audit   '@jridgewell/trace-mapping': [ '0.3.30' ],
+28 silly audit   '@nodelib/fs.scandir': [ '2.1.5' ],
+28 silly audit   '@nodelib/fs.stat': [ '2.0.5' ],
+28 silly audit   '@nodelib/fs.walk': [ '1.2.8' ],
+28 silly audit   '@pkgjs/parseargs': [ '0.11.0' ],
+28 silly audit   'ansi-regex': [ '6.2.0', '5.0.1' ],
+28 silly audit   'ansi-styles': [ '6.2.1', '4.3.0' ],
+28 silly audit   'any-promise': [ '1.3.0' ],
+28 silly audit   anymatch: [ '3.1.3' ],
+28 silly audit   arg: [ '5.0.2' ],
+28 silly audit   'balanced-match': [ '1.0.2' ],
+28 silly audit   'binary-extensions': [ '2.3.0' ],
+28 silly audit   'brace-expansion': [ '2.0.2' ],
+28 silly audit   braces: [ '3.0.3' ],
+28 silly audit   'camelcase-css': [ '2.0.1' ],
+28 silly audit   chokidar: [ '3.6.0' ],
+28 silly audit   'glob-parent': [ '5.1.2', '6.0.2' ],
+28 silly audit   'color-convert': [ '2.0.1' ],
+28 silly audit   'color-name': [ '1.1.4' ],
+28 silly audit   commander: [ '4.1.1' ],
+28 silly audit   'cross-spawn': [ '7.0.6' ],
+28 silly audit   cssesc: [ '3.0.0' ],
+28 silly audit   didyoumean: [ '1.2.2' ],
+28 silly audit   dlv: [ '1.1.3' ],
+28 silly audit   eastasianwidth: [ '0.2.0' ],
+28 silly audit   'emoji-regex': [ '9.2.2', '8.0.0' ],
+28 silly audit   'fast-glob': [ '3.3.3' ],
+28 silly audit   fastq: [ '1.19.1' ],
+28 silly audit   'fill-range': [ '7.1.1' ],
+28 silly audit   'foreground-child': [ '3.3.1' ],
+28 silly audit   fsevents: [ '2.3.3' ],
+28 silly audit   'function-bind': [ '1.1.2' ],
+28 silly audit   glob: [ '10.4.5' ],
+28 silly audit   hasown: [ '2.0.2' ],
+28 silly audit   'is-binary-path': [ '2.1.0' ],
+28 silly audit   'is-core-module': [ '2.16.1' ],
+28 silly audit   'is-extglob': [ '2.1.1' ],
+28 silly audit   'is-fullwidth-code-point': [ '3.0.0' ],
+28 silly audit   'is-glob': [ '4.0.3' ],
+28 silly audit   'is-number': [ '7.0.0' ],
+28 silly audit   isexe: [ '2.0.0' ],
+28 silly audit   jackspeak: [ '3.4.3' ],
+28 silly audit   jiti: [ '1.21.7' ],
+28 silly audit   lilconfig: [ '3.1.3' ],
+28 silly audit   'lines-and-columns': [ '1.2.4' ],
+28 silly audit   'lru-cache': [ '10.4.3' ],
+28 silly audit   merge2: [ '1.4.1' ],
+28 silly audit   micromatch: [ '4.0.8' ],
+28 silly audit   minimatch: [ '9.0.5' ],
+28 silly audit   minipass: [ '7.1.2' ],
+28 silly audit   mz: [ '2.7.0' ],
+28 silly audit   nanoid: [ '3.3.11' ],
+28 silly audit   'normalize-path': [ '3.0.0' ],
+28 silly audit   'object-assign': [ '4.1.1' ],
+28 silly audit   'object-hash': [ '3.0.0' ],
+28 silly audit   'package-json-from-dist': [ '1.0.1' ],
+28 silly audit   'path-key': [ '3.1.1' ],
+28 silly audit   'path-parse': [ '1.0.7' ],
+28 silly audit   'path-scurry': [ '1.11.1' ],
+28 silly audit   picocolors: [ '1.1.1' ],
+28 silly audit   picomatch: [ '2.3.1' ],
+28 silly audit   pify: [ '2.3.0' ],
+28 silly audit   pirates: [ '4.0.7' ],
+28 silly audit   postcss: [ '8.5.6' ],
+28 silly audit   'postcss-import': [ '15.1.0' ],
+28 silly audit   'postcss-js': [ '4.0.1' ],
+28 silly audit   'postcss-load-config': [ '4.0.2' ],
+28 silly audit   'postcss-nested': [ '6.2.0' ],
+28 silly audit   'postcss-selector-parser': [ '6.1.2' ],
+28 silly audit   'postcss-value-parser': [ '4.2.0' ],
+28 silly audit   'queue-microtask': [ '1.2.3' ],
+28 silly audit   'read-cache': [ '1.0.0' ],
+28 silly audit   readdirp: [ '3.6.0' ],
+28 silly audit   resolve: [ '1.22.10' ],
+28 silly audit   reusify: [ '1.1.0' ],
+28 silly audit   'run-parallel': [ '1.2.0' ],
+28 silly audit   'shebang-command': [ '2.0.0' ],
+28 silly audit   'shebang-regex': [ '3.0.0' ],
+28 silly audit   'signal-exit': [ '4.1.0' ],
+28 silly audit   'source-map-js': [ '1.2.1' ],
+28 silly audit   'string-width': [ '5.1.2', '4.2.3' ],
+28 silly audit   'strip-ansi': [ '6.0.1', '7.1.0' ],
+28 silly audit   sucrase: [ '3.35.0' ],
+28 silly audit   'supports-preserve-symlinks-flag': [ '1.0.0' ],
+28 silly audit   thenify: [ '3.3.1' ],
+28 silly audit   'thenify-all': [ '1.6.0' ],
+28 silly audit   'to-regex-range': [ '5.0.1' ],
+28 silly audit   'ts-interface-checker': [ '0.1.13' ],
+28 silly audit   'util-deprecate': [ '1.0.2' ],
+28 silly audit   which: [ '2.0.2' ],
+28 silly audit   'wrap-ansi': [ '8.1.0', '7.0.0' ],
+28 silly audit   yaml: [ '2.8.1' ],
+28 silly audit   tailwindcss: [ '3.4.17' ]
+28 silly audit }
+29 verbose reify failed optional dependency C:\Development\HTMX\RosieTaylorBranding\node_modules\fsevents
+30 silly reify mark deleted [
+30 silly reify   'C:\\Development\\HTMX\\RosieTaylorBranding\\node_modules\\fsevents'
+30 silly reify ]
+31 silly tarball no local data for tailwindcss@https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.17.tgz. Extracting by manifest.
+32 http fetch GET 200 https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.17.tgz 2567ms (cache miss)
+33 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 3466ms
+34 silly audit report {}
+35 silly ADD
+36 silly CHANGE node_modules/tailwindcss
+37 silly REMOVE node_modules/postcss-load-config/node_modules/lilconfig
+38 silly CHANGE node_modules/lilconfig
+39 verbose cwd C:\Development\HTMX\RosieTaylorBranding
+40 verbose os Windows_NT 10.0.26100
+41 verbose node v22.12.0
+42 verbose npm  v10.9.0
+43 verbose exit 0
+44 info ok

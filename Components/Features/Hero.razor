@@ -1,72 +1,64 @@
-    @using MudBlazor
+@using MudBlazor
 
-    <section class="relative min-h-screen flex items-center justify-center bg-gradient-background-muted">
-      <div class="container py-20">
-        <div class="grid grid-2-cols items-center">
-          <div class="space-y-8">
-            <div class="space-y-4">
-              <div class="flex items-center gap-2 text-primarycol">
-                <MudIcon Icon="@Icons.Material.Filled.Favorite" class="h-5 w-5" />
-                <span class="text-sm font-medium">Personal Branding & Marketing</span>
-              </div>
-              <h1 class="text-5xl lg-text-6xl font-bold tracking-tight">
-                <span class="text-gradient-primarycol-to-secondarycol">
-                  Rosie Taylor
-                </span>
-                <br />
-                Branding
-              </h1>
-              <p class="text-xl text-muted-foreground leading-relaxed">
-                Creating meaningful brand identities for small businesses across the UK. 
-                I take the time to understand your vision and craft a brand that truly represents your values.
-              </p>
-            </div>
-            
-            <div class="flex flex-col sm-flex-row gap-4">
-              <button 
-                size="lg" 
-                class="btn btn-primarycol hover:bg-primarycol text-primarycol-foreground group"
-              >
-                Start Your Brand Journey
-                <MudIcon Icon="@Icons.Material.Filled.ArrowForward" class="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button 
-                variant="outline" 
-                size="lg"
-                class="btn border-secondarycol text-secondarycol hover:bg-secondarycol hover:text-secondarycol-foreground"
-              >
-                <MudIcon Icon="@Icons.Material.Filled.AutoAwesome" class="mr-2 h-4 w-4" />
-                View Portfolio
-              </button>
+<section class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-gray-100">
+    <div class="container mx-auto px-4 py-20">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2 text-primarycol">
+                        <MudIcon Icon="@Icons.Material.Filled.Favorite" class="h-5 w-5" />
+                        <span class="text-sm font-medium">Personal Branding & Marketing</span>
+                    </div>
+                    <h1 class="text-5xl lg:text-6xl font-bold tracking-tight">
+                        <span class="bg-gradient-to-r from-primarycol to-secondarycol bg-clip-text text-transparent">
+                            Rosie Taylor
+                        </span>
+                        <br />
+                        <span class="text-foreground">Branding</span>
+                    </h1>
+                    <p class="text-xl text-muted-foreground leading-relaxed">
+                        Creating meaningful brand identities for small businesses across the UK. 
+                        I take the time to understand your vision and craft a brand that truly represents your values.
+                    </p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-primarycol text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300 group flex items-center justify-center">
+                        Start Your Brand Journey
+                        <MudIcon Icon="@Icons.Material.Filled.ArrowForward" class="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                    <button class="border-2 border-secondarycol text-secondarycol hover:bg-secondarycol hover:text-white px-6 py-3 rounded-lg transition-all duration-300 flex items-center justify-center">
+                        <MudIcon Icon="@Icons.Material.Filled.AutoAwesome" class="mr-2 h-4 w-4" />
+                        View Portfolio
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-8 pt-8">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primarycol">50+</div>
+                        <div class="text-sm text-muted-foreground">Happy Clients</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-secondarycol">5 Years</div>
+                        <div class="text-sm text-muted-foreground">Experience</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primarycol">UK Wide</div>
+                        <div class="text-sm text-muted-foreground">Coverage</div>
+                    </div>
+                </div>
             </div>
 
-            <div class="flex items-center gap-8 pt-8">
-              <div class="text-center">
-                <div class="text-2xl font-bold text-primarycol">50+</div>
-                <div class="text-sm text-muted-foreground">Happy Clients</div>
-              </div>
-              <div class="text-center">
-                <div class="text-2xl font-bold text-secondarycol">5 Years</div>
-                <div class="text-sm text-muted-foreground">Experience</div>
-              </div>
-              <div class="text-center">
-                <div class="text-2xl font-bold text-primarycol">UK Wide</div>
-                <div class="text-sm text-muted-foreground">Coverage</div>
-              </div>
+            <div class="relative">
+                <div class="relative z-10">
+                    <!-- Placeholder for your image -->
+                    <div class="w-full h-96 bg-gradient-to-br from-primarycol/20 to-secondarycol/20 rounded-2xl shadow-2xl flex items-center justify-center">
+                        <span class="text-muted-foreground">Portfolio Showcase</span>
+                    </div>
+                </div>
+                <!-- Gradient background effect -->
+                <div class="absolute inset-4 bg-gradient-to-br from-primarycol to-secondarycol rounded-2xl -z-10 opacity-20"></div>
             </div>
-          </div>
-
-          <div class="relative">
-            <div class="relative z-10">
-              @* <Image
-                src={portfolioHero}
-                alt="Branding portfolio showcase"
-                class="rounded-2xl shadow-2xl w-full"
-                priority
-              /> *@
-            </div>
-            <div class="absolute gradient-top-right w-full bg-gradient-primarycol-secondarycol rounded-2xl z-behind"></div>
-          </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>

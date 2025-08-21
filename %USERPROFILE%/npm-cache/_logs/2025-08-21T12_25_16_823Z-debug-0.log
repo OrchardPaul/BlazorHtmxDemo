@@ -1,0 +1,12 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.0
+2 info using node@v22.12.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Development\HTMX\RosieTaylorBranding\.npmrc
+5 silly config load:file:C:\Users\ptayl\.npmrc
+6 silly config load:file:C:\Development\HTMX\RosieTaylorBranding\%USERPROFILE%\npm\etc\npmrc
+7 verbose title npm exec tailwindcss -i ./wwwroot/css/tailwind-input.css -o ./wwwroot/css/tailwind.css --watch
+8 verbose argv "exec" "--" "tailwindcss" "-i" "./wwwroot/css/tailwind-input.css" "-o" "./wwwroot/css/tailwind.css" "--watch"
+9 verbose logfile logs-max:10 dir:C:\Development\HTMX\RosieTaylorBranding\%USERPROFILE%\npm-cache\_logs\2025-08-21T12_25_16_823Z-
+10 verbose logfile C:\Development\HTMX\RosieTaylorBranding\%USERPROFILE%\npm-cache\_logs\2025-08-21T12_25_16_823Z-debug-0.log
+11 silly logfile done cleaning log files
