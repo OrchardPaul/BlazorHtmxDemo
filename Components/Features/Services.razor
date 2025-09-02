@@ -1,0 +1,144 @@
+@using MudBlazor
+
+@code
+{
+    private readonly object[] ServiceList = new[]
+    {
+        new
+        {
+            icon = Icons.Material.Filled.AutoAwesome,
+            name = "Brand + Website",
+            price = "£4,500",
+            duration = "6-8 weeks",
+            description = "Complete brand and web presence for businesses ready to launch with impact.",
+            features = new[]
+            {
+                "Everything in Full Brand",
+                "Custom website design",
+                "Responsive development",
+                "SEO optimization",
+                "Content management system",
+                "Launch support",
+                "6 months support"
+            },
+            popular = false
+        }
+    }; 
+}
+
+<section id="about" class="py-16 bg-card">
+    <div class="container mx-auto px-4">
+            <div class="min-h-screen">
+                <section class="py-20 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-7xl mx-auto text-center">
+                        <h1 class="text-4xl md:text-5xl font-bold ">Choose Your <span
+                                class="bg-gradient-to-r from-primarycol to-secondarycol bg-clip-text text-transparent">Perfect
+                                Package</span></h1>
+                        <p class="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">Each package is carefully
+                            crafted to meet different business needs and budgets. All include my personal attention and
+                            collaborative approach.</p>
+                    </div>
+                </section>
+                <section class="py-12 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-7xl mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            @foreach (dynamic service in ServiceList)
+                            {
+                            <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative ring-2 ring-brand-pink hover:shadow-lg transition-all duration-300">
+                                @if (service.popular)
+                                {
+                                    <div
+                                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary hover:bg-primary/80 absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-brand-pink to-brand-blue text-white">
+                                        Most Popular
+                                    </div>
+                                }
+                                <div class="flex flex-col space-y-1.5 p-6 text-center pb-6">
+                                    <div class="w-16 h-16 bg-gradient-to-r from-brand-pink to-brand-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <MudIcon Icon="@service.icon" Class="h-8 w-8" />
+                                    </div>
+                                    <h3 class="font-semibold tracking-tight text-2xl">@service.name</h3>
+                                    <div class="text-3xl font-bold text-brand-pink">@service.price</div>
+                                    <p class="text-sm text-muted-foreground">@service.duration</p>
+                                </div>
+                                <div class="p-6 pt-0">
+                                    <p class="text-muted-foreground mb-6">@service.description</p>
+                                    <ul class="space-y-3 mb-8">
+                                        @foreach (dynamic feature in service.features)
+                                        {
+                                            <li class="flex items-start space-x-3">
+                                                <MudIcon Icon="@Icons.Material.Filled.Check" Class="h-5 w-5 text-primarycol mt-0.5 flex-shrink-0" />
+                                                <span class="text-sm">@feature</span>
+                                            </li>
+                                        }
+                                    </ul>
+                                    <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-to-r from-primarycol to-secondarycol text-white hover:shadow-lg hover:scale-105 transition-all duration-300 h-11 rounded-md px-8 w-full"
+                                        href="/contact">Get a Quote</a>
+                                </div>
+                            </div>
+                            }
+                        </div>
+                    </div>
+                </section>
+                <section class="py-20 px-4 sm:px-6 lg:px-8 bg-muted/50">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="text-center mb-12">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-4">Add-on Services</h2>
+                            <p class="text-xl text-muted-foreground">Enhance your package with these additional services
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="font-semibold">Additional logo concepts</h3><span
+                                        class="font-bold text-brand-pink">£150 each</span>
+                                </div>
+                            </div>
+                            <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="font-semibold">Business stationery suite</h3><span
+                                        class="font-bold text-brand-pink">£350</span>
+                                </div>
+                            </div>
+                            <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="font-semibold">Social media brand kit</h3><span
+                                        class="font-bold text-brand-pink">£450</span>
+                                </div>
+                            </div>
+                            <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="font-semibold">Brand photography session</h3><span
+                                        class="font-bold text-brand-pink">£650</span>
+                                </div>
+                            </div>
+                            <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="font-semibold">Packaging design</h3><span
+                                        class="font-bold text-brand-pink">£750</span>
+                                </div>
+                            </div>
+                            <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="font-semibold">E-commerce setup</h3><span
+                                        class="font-bold text-brand-pink">£950</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-20 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">Not sure which package is right for you?</h2>
+                        <p class="text-xl text-muted-foreground mb-8">Let's chat about your business goals and find the
+                            perfect solution together.</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center"><a
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-to-r from-brand-pink to-brand-blue text-white hover:shadow-lg hover:scale-105 transition-all duration-300 h-11 rounded-md px-8"
+                                href="/contact">Book a Discovery Call</a><a
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8"
+                                href="/process">View My Process</a></div>
+                    </div>
+                </section>
+            </div>
+        
+    </div>
+</section>

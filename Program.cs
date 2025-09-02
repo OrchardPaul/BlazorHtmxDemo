@@ -2,6 +2,7 @@
 using RosieTaylorBranding.Components;
 using RosieTaylorBranding.Pages.Home;
 using RosieTaylorBranding.Pages.About;
+using RosieTaylorBranding.Pages.Services;
 using RosieTaylorBranding.Pages.Contact;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -52,6 +53,7 @@ app.MapRazorComponents<App>();
 
 app.MapHomeEndpoints();
 app.MapAboutEndpoints();
+app.MapServicesEndpoints();
 app.MapContactEndpoints();
 app.MapControllers();
 app.MapStaticAssets();

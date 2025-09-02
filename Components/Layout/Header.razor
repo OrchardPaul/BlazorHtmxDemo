@@ -50,6 +50,14 @@
                 Home
               </a>
               <a
+                hx-get="/api/services"
+                hx-target="#content"
+                hx-swap="innerHTML"
+                class="text-muted-foreground hover:text-primarycol transition-colors font-medium"
+              >
+                Services
+              </a>
+              <a
                 hx-get="/api/about"
                 hx-target="#content"
                 hx-swap="innerHTML"

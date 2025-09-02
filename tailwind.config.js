@@ -11,8 +11,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primarycol': '#2efa49ff',
-        'secondarycol': '#cd4e9cff',
+        'primarycol': '#ff5df1ff',
+        'secondarycol': '#46b5ffff',
         'background': 'var(--color-background)',
         'foreground': 'var(--color-foreground)',
         'muted-foreground': 'var(--color-muted-foreground)',

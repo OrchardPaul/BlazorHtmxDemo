@@ -22,15 +22,9 @@
     // JavaScript Theme Toggle
 class ThemeToggle {
     constructor() {
-        this.mode = localStorage.getItem('data-theme');
+        this.mode = localStorage.getItem('data-theme') || this.getBrowserPreference() || 'light';
         //get user preference if available
 
-        if (!this.mode && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            this.mode = 'dark';
-        }
-        else{
-            this.mode = 'light';
-        }
         this.button = document.getElementById('theme-toggle');
         this.sunIcon = document.getElementById('sun-icon');
         this.moonIcon = document.getElementById('moon-icon');
@@ -87,6 +81,23 @@ class ThemeToggle {
     
     saveToLocalStorage() {
         localStorage.setItem('data-theme', this.mode);
+    }
+
+    getBrowserPreference() {
+        // Check if the browser supports matchMedia
+        if (window.matchMedia) {
+            // Check if user prefers dark mode
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                return 'dark';
+            }
+            // Check if user prefers light mode (explicit)
+            else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+                return 'light';
+            }
+        }
+        
+        // Default fallback if no preference is set or supported
+        return 'light';
     }
 
 }
