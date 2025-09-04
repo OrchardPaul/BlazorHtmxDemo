@@ -1,7 +1,7 @@
 /* Custom CSS Design System - Zero Dependencies */
 /* Preserving the beautiful primarycol/secondarycol color system */
 
-/* CSS Reset and Base Styles */
+/* CSS Reset and Base Styles */ 
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -28,30 +28,41 @@ body {
 }
 /* CSS Variables for Design System */
 :root {
-  --background: 0 0% 98%;
-  --foreground: 222.2 84% 4.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --border: 214.3 31.8% 91.4%;
-  --inputborder: 0 0% 85%;
-  --inputborderonfocus: 0 0% 70%;
+  --background: hsl(0 0% 98%);
+  --foreground: hsl(0 0% 4.9%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 0% 4.9%);
+  --muted: hsl(0 0% 96.1%);
+  --muted-foreground: hsl(0 0% 46.9%);
+  --border: hsl(0 0% 91.4%);
+  --inputborder: hsl(0 0% 85%);
+  --inputborderonfocus: hsl(0 0% 70%);
+  --base: hsl(0, 0%, 98%);
+  --base-50: hsl(0 0% 5%);
+  --base-100: hsl(0 0% 10%);
+  --base-150: hsl(0 0% 15%);
+  --base-200: hsl(0 0% 20%);
+  --base-250: hsl(0 0% 25%);
+  --base-300: hsl(0 0% 30%);
+  --base-350: hsl(0 0% 35%);
+  --base-400: hsl(0 0% 40%);
+  --base-450: hsl(0 0% 45%);
+  --base-500: hsl(0 0% 50%);
+  --base-550: hsl(0 0% 55%);
+  --base-600: hsl(0 0% 60%);
+  --base-650: hsl(0 0% 65%);
+  --base-700: hsl(0 0% 70%);
+  --base-750: hsl(0 0% 75%);
+  --base-800: hsl(0 0% 80%);
+  --base-850: hsl(0 0% 85%);
+  --base-900: hsl(0 0% 90%);
+  --base-950: hsl(0 0% 95%);
 
   /* Brand colors - Your Beautiful System */
-  --primarycol: 330 100% 60%;
-  --primarycol-foreground: 0 0% 100%;
-  --secondarycol: 200 100% 70%;
-  --secondarycol-foreground: 222.2 84% 4.9%;
-  
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, hsl(var(--primarycol)), hsl(var(--secondarycol)));
-  --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
-  
-  /* Shadows */
-  --shadow-primarycol: 0 10px 30px -10px hsl(var(--primarycol) / 0.3);
-  --shadow-secondarycol: 0 10px 30px -10px hsl(var(--secondarycol) / 0.3);
-  --shadow-elegant: 0 4px 20px -4px hsl(var(--foreground) / 0.1);
+  --primarycol: hsl(330 100% 60%);
+  --primarycol-foreground: hsl(0 0% 100%);
+  --secondarycol: hsl(200 100% 70%);
+  --secondarycol-foreground: hsl(222.2 84% 4.9%);
 
   --radius: 0.5rem;
 
@@ -69,80 +80,85 @@ body {
   --spacing-em-xl: 2em; 
 }
 
+
 /* Dark Mode Support */
 [data-theme="dark"] {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
-  --card: 220 13% 18%;
-  --card-foreground: 210 40% 98%;
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
-  --border: 217.2 32.6% 17.5%;
-  --inputborder: 217.2 32.6% 25%;
-  --inputborderonfocus: 0 0% 70%;
+  --background: hsl(0 0% 4.9%);
+  --foreground: hsl(0 0% 98%);
+  --card: hsl(0 0% 0%);
+  --card-foreground: hsl(210 40% 98%);
+  --muted: hsl(0 0% 17.5%);
+  --muted-foreground: hsl(0 0% 65.1%);
+  --border: hsl(217.2 32.6% 17.5%);
+  --inputborder: hsl(217.2 32.6% 25%);
+  --inputborderonfocus: hsl(0 0% 70%);
+  --base: hsl(0, 0%, 2%);
+  --base-50: hsl(0 0% 95%);
+  --base-100: hsl(0 0% 90%);
+  --base-150: hsl(0 0% 85%);
+  --base-200: hsl(0 0% 80%);
+  --base-250: hsl(0 0% 75%);
+  --base-300: hsl(0 0% 70%);
+  --base-350: hsl(0 0% 65%);
+  --base-400: hsl(0 0% 60%);
+  --base-450: hsl(0 0% 55%);
+  --base-500: hsl(0 0% 50%);
+  --base-550: hsl(0 0% 45%);
+  --base-600: hsl(0 0% 40%);
+  --base-650: hsl(0 0% 35%);
+  --base-700: hsl(0 0% 30%);
+  --base-750: hsl(0 0% 25%);
+  --base-800: hsl(0 0% 20%);
+  --base-850: hsl(0 0% 15%);
+  --base-900: hsl(0 0% 10%);
+  --base-950: hsl(0 0% 5%);
 
-  
-  /* Dark gradients */
-  --gradient-primary: linear-gradient(135deg, hsl(var(--primarycol)), hsl(var(--secondarycol)));
-  --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--card)));
-  
-  /* Dark shadows */
-  --shadow-primarycol: 0 10px 30px -10px hsl(var(--primarycol) / 0.4);
-  --shadow-secondarycol: 0 10px 30px -10px hsl(var(--secondarycol) / 0.4);
-  --shadow-elegant: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
-}
-
-[data-theme="light"] {
-  --background: 0 0% 98%;
-  --foreground: 222.2 84% 4.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --border: 214.3 31.8% 91.4%;
-  --inputborder: 0 0% 85%;
-  --inputborderonfocus: 0 0% 70%;
-
-  
-  /* Light gradients */
-  --gradient-primary: linear-gradient(135deg, hsl(var(--primarycol)), hsl(var(--secondarycol)));
-  --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
-  
-  /* Light shadows */
-  --shadow-primarycol: 0 10px 30px -10px hsl(var(--primarycol) / 0.3);
-  --shadow-secondarycol: 0 10px 30px -10px hsl(var(--secondarycol) / 0.3);
-  --shadow-elegant: 0 4px 20px -4px hsl(var(--foreground) / 0.1);
 }
 
 /* Fallback to system preference if no data-theme is set */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 220 13% 18%;
-    --card-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --border: 217.2 32.6% 17.5%;
-    --inputborder: 217.2 32.6% 25%;
-    --inputborderonfocus: 0 0% 70%;
+    --background: hsl(222.2 84% 4.9%);
+    --foreground: hsl(210 40% 98%);
+    --card: hsl(0 0% 0%);
+    --card-foreground: hsl(210 40% 98%);
+    --muted: hsl(217.2 32.6% 17.5%);
+    --muted-foreground: hsl(215 20.2% 65.1%);
+    --border: hsl(217.2 32.6% 17.5%);
+    --inputborder: hsl(217.2 32.6% 25%);
+    --inputborderonfocus: hsl(0 0% 70%);
+    --base: hsl(0, 0%, 2%);
+    --base-50: hsl(0 0% 95%);
+    --base-100: hsl(0 0% 90%);
+    --base-150: hsl(0 0% 85%);
+    --base-200: hsl(0 0% 80%);
+    --base-250: hsl(0 0% 75%);
+    --base-300: hsl(0 0% 70%);
+    --base-350: hsl(0 0% 65%);
+    --base-400: hsl(0 0% 60%);
+    --base-450: hsl(0 0% 55%);
+    --base-500: hsl(0 0% 50%);
+    --base-550: hsl(0 0% 45%);
+    --base-600: hsl(0 0% 40%);
+    --base-650: hsl(0 0% 35%);
+    --base-700: hsl(0 0% 30%);
+    --base-750: hsl(0 0% 25%);
+    --base-800: hsl(0 0% 20%);
+    --base-850: hsl(0 0% 15%);
+    --base-900: hsl(0 0% 10%);
+    --base-950: hsl(0 0% 5%);
 
-    
-    /* Dark gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primarycol)), hsl(var(--secondarycol)));
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--card)));
-    
-    /* Dark shadows */
-    --shadow-primarycol: 0 10px 30px -10px hsl(var(--primarycol) / 0.4);
-    --shadow-secondarycol: 0 10px 30px -10px hsl(var(--secondarycol) / 0.4);
-    --shadow-elegant: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
   }
+}
+
+:root {
+
 }
 
 /* Apply Design System */
 body {
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 /* Layout Components */
@@ -211,8 +227,14 @@ body {
 /***********************************/
 
 .bg-card {
-  background-color: hsl(var(--card));
+  background-color: var(--card);
 }
+
+/***********************************/
+/* buttons */
+/***********************************/
+
+
 
 
 /************************************/
@@ -252,14 +274,14 @@ input, textarea, select {
   outline: none;
   border: none;
   box-shadow:
-    0 0 0 2px hsl(var(--background)),     /* offset color */
-    0 0 0 4px hsl(var(--background));     /* ring color (offset + ring width = total) */
+    0 0 0 2px var(--background),     /* offset color */
+    0 0 0 4px var(--background);     /* ring color (offset + ring width = total) */
 }
 
 input:focus, textarea:focus, select:focus {
   box-shadow:
-    0 0 0 2px hsl(var(--background)),     /* offset color */
-    0 0 0 4px hsl(var(--inputborderonfocus)); /* ring color (offset + ring width = total) */
+    0 0 0 2px var(--background),     /* offset color */
+    0 0 0 4px var(--inputborderonfocus); /* ring color (offset + ring width = total) */
 }
 
 .ring-offset-background {
@@ -330,15 +352,6 @@ input:focus, textarea:focus, select:focus {
 }
 
 
-
-.bg-primarycol-10 {
-  background-color: hsl(var(--primarycol) / 0.1);
-}
-
-.bg-secondarycol-10 {
-  background-color: hsl(var(--secondarycol) / 0.1);
-}
-
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -347,15 +360,6 @@ input:focus, textarea:focus, select:focus {
   justify-content: center;
 }
 
-
-
-.text-primarycol {
-  color: hsl(var(--primarycol));
-}
-
-.text-secondarycol {
-  color: hsl(var(--secondarycol));
-}
 
 .font-semibold {
   font-weight: 600;
@@ -384,10 +388,6 @@ input:focus, textarea:focus, select:focus {
   margin-right: auto;
 }
 
-/* Hero Component Specific */
-.bg-gradient-background-muted {
-  background: linear-gradient(to bottom right, hsl(var(--background)), hsl(var(--muted)));
-}
 
 .text-5xl {
   font-size: 3rem;
@@ -451,21 +451,9 @@ input:focus, textarea:focus, select:focus {
   text-align: center;
 }
 
-/* Gradient Text Utilities - Keep the main one in use */
-.text-gradient-primarycol-to-secondarycol {
-  background: linear-gradient(to right, hsl(var(--primarycol)), hsl(var(--secondarycol)));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
-}
-
-.text-muted-foreground {
-  color: hsl(var(--muted-foreground));
 }
 
 .leading-relaxed {
@@ -504,7 +492,7 @@ input:focus, textarea:focus, select:focus {
 
 /* Portfolio Component */
 .bg-background {
-  background-color: hsl(var(--background));
+  background-color: var(--background);
 }
 
 
@@ -588,18 +576,6 @@ input:focus, textarea:focus, select:focus {
   margin-bottom: 1.5rem;
 }
 
-.bg-gradient-primarycol-secondarycol-light {
-  background: linear-gradient(to bottom right, hsl(var(--primarycol) / 0.05), hsl(var(--secondarycol) / 0.05));
-}
-
-.border-primarycol-20 {
-  border-color: hsl(var(--primarycol) / 0.2);
-}
-
-
-
-
-
 .block {
   display: block;
 }
@@ -610,23 +586,12 @@ input:focus, textarea:focus, select:focus {
 
 /* Form Elements */
 label {
-  color: hsl(var(--foreground));
+  color: var(--foreground);
 }
 
 /*************************************/
 /* Buttons                           */
 /*************************************/
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: var(--radius);
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-}
 
 button, input:where([type=button]), input:where([type=reset]), input:where([type=submit]) {
     -webkit-appearance: button;
@@ -634,30 +599,7 @@ button, input:where([type=button]), input:where([type=reset]), input:where([type
     background-image: none;
 }
 
-/* Button Variants for Contact */
-.btn-primarycol {
-  background-color: hsl(var(--primarycol));
-  color: hsl(var(--primarycol-foreground));
-  border: 1px solid hsl(var(--primarycol));
-}
 
-.btn-primarycol:hover {
-  background-color: hsl(var(--primarycol) / 0.9);
-}
-
-.btn-secondarycol {
-  background-color: hsl(var(--secondarycol));
-  color: hsl(var(--secondarycol-foreground));
-  border: 1px solid hsl(var(--secondarycol));
-}
-
-.btn-secondarycol:hover {
-  background-color: hsl(var(--secondarycol) / 0.9);
-}
-
-.rounded-md {
-  border-radius: calc(var(--radius) - 2px);
-}
 
 /*****************************/
 /* Borders and Shadows */
@@ -665,10 +607,6 @@ button, input:where([type=button]), input:where([type=reset]), input:where([type
 
 .border-none {
   border: none;
-}
-
-.border-secondarycol {
-  border: 1px solid hsl(var(--secondarycol));
 }
 
 /* Header Component */
@@ -696,35 +634,16 @@ button, input:where([type=button]), input:where([type=reset]), input:where([type
 /* Backgrounds and Backdrops */
 /****************************************/
 
-.bg-background-80 {
-  background-color: hsl(var(--background) / 0.8);
-}
-
 .backdrop-blur-md {
   backdrop-filter: blur(12px);
 }
-
-.border-b {
-  border-bottom: 1px solid hsl(var(--border));
-}
-
 
 .justify-between {
   justify-content: space-between;
 }
 
-.text-foreground {
-  color: hsl(var(--foreground));
-}
-
-
-
 .space-x-8 > * + * {
   margin-left: 2rem;
-}
-
-.hover-text-primarycol:hover {
-  color: hsl(var(--primarycol));
 }
 
 .transition-colors {
@@ -736,14 +655,7 @@ button, input:where([type=button]), input:where([type=reset]), input:where([type
 }
 
 
-
-.border-t {
-  border-top: 1px solid hsl(var(--border));
-}
-
 /* Footer Component */
-
-
 
 .space-y-3 > * + * {
   margin-top: 0.75rem;
@@ -752,12 +664,6 @@ button, input:where([type=button]), input:where([type=reset]), input:where([type
 .space-y-2 > * + * {
   margin-top: 0.5rem;
 }
-
-.hover-text-secondarycol:hover {
-  color: hsl(var(--secondarycol));
-}
-
-
 
 .md-flex-row {
   flex-direction: column;
@@ -774,13 +680,6 @@ button, input:where([type=button]), input:where([type=reset]), input:where([type
 }
 
 
-
-
-
-.fill-primarycol {
-  fill: hsl(var(--primarycol));
-}
-
 /* Theme Toggle Utilities */
 .theme-toggle {
   display: inline-flex;
@@ -789,16 +688,16 @@ button, input:where([type=button]), input:where([type=reset]), input:where([type
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background-color: hsl(var(--muted));
-  border: 1px solid hsl(var(--border));
-  color: hsl(var(--foreground));
+  background-color: var(--muted);
+  border: 1px solid var(--border);
+  color: var(--foreground);
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .theme-toggle:hover {
-  background-color: hsl(var(--muted) / 0.8);
-  border-color: hsl(var(--primarycol));
+  background-color: var(--muted);
+  border-color: var(--primarycol);
 }
 
 .theme-toggle svg {

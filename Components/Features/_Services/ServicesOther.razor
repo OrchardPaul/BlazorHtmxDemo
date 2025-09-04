@@ -1,0 +1,72 @@
+@code
+{
+    private readonly object[] Services = new[]
+    {
+        new 
+        { 
+            Name = "Business Stationery Suite",
+            Description = "From business cards and letterheads to invoices, email templates, notepads, pens, and other branded office essentials, I create a scalable stationery suite that adapts to your business and presents a professional, consistent image across every touchpoint." 
+        },
+        new 
+        { 
+            Name = "Social Media Templates",
+            Description = "From Instagram and Facebook posts to LinkedIn updates, stories, reels, or any platform you use, I create a set of templates that keeps your content consistent, on-brand, and easy to update, scalable whether you post once a week or every day." 
+        },
+        new 
+        { 
+            Name = "Packaging Design",
+            Description = "Whether it’s product boxes, labels, pouches, gift wrap, or point-of-sale displays, I design packaging that tells your brand story while protecting your products. Every solution is tailored to your range, style, and audience, so it works for one item or an entire product line." 
+        },
+        new 
+        { 
+            Name = "Marketing Collateral",
+            Description = "Brochures, flyers, posters, menus, event materials, or any printed or digital content your business needs, I design collateral that communicates your message clearly while reflecting your brand, scalable to single campaigns or full-scale marketing initiatives." 
+        },
+        new 
+        { 
+            Name = "Presentation Decks",
+            Description = "From investor pitches to client presentations or internal reporting, I create branded slide decks that are professional, visually engaging, and fully editable, scaled to the length and complexity your project requires." 
+        },
+        new 
+        { 
+            Name = "Brand Illustrations",
+            Description = "Whether you need a few icons, a full set of custom illustrations, or a mascot/character for your brand, I design visuals that are flexible, memorable, and tailored to your brand story." 
+        },
+        new 
+        { 
+            Name = "Website Add-Ons",
+            Description = "If your website needs extra pages, blog functionality, e-commerce features, custom forms, galleries, or interactive elements, I create scalable solutions tailored to your business goals, designed to grow as your business grows." 
+        }
+        
+    };
+
+}
+
+
+<div class="text-center mt-8 mb-8">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4"><span class="bg-gradient-to-r from-primarycol to-secondarycol bg-clip-text text-transparent">Add-on</span> Services</h2>
+    <p class="text-xl text-muted-foreground max-w-[70%] mx-auto">These are examples of extra services I offer, you can mix, match, or request a bespoke solution for your business. Every add-on is tailored to you, scalable to your needs, and designed to make your brand cohesive and memorable.
+    </p>
+</div>
+    
+<div class="container mx-auto px-4 py-12  ">
+    @foreach(dynamic service in Services)
+    {
+        <div class="d-collapse d-collapse-arrow bg-base border border-base-700 rounded-lg mb-4">
+            <input type="checkbox" name="my-accordion-2" class="peer"/>
+            <div class="d-collapse-title font-semibold">@service.Name</div>
+            <div class="d-collapse-content text-sm bg-base-900 ">
+                <div class="py-4">
+                    <div class="py-2 leading-8">
+                        @((MarkupString)service.Description)
+                    </div>
+                    <div class="flex justify-center gap-4">
+                        <button class="d-btn d-btn-outline d-btn-secondary mt-4 max-w-sm">More details</button>
+                        <button class="d-btn d-btn-primary mt-4 max-w-sm">Get a quote</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

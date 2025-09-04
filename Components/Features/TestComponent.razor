@@ -1,0 +1,30 @@
+@code
+{
+    private readonly object[] Services = new[]
+    {
+        new { Name = "Service 1", Description = "Description for Service 1" },
+        new { Name = "Service 2", Description = "Description for Service 2" },
+        new { Name = "Service 3", Description = "<p>Description for Service 3</p><p>Additional information about Service 3.</p>" }
+    };
+
+}
+
+<section class="bg-base-200">
+    <div class="container mx-auto px-4 py-12 bg-base-500 ">
+        @foreach(dynamic service in Services)
+        {
+            <div class="d-collapse d-collapse-arrow bg-base-100 border border-base-300 has-[:checked]:border-primarycol rounded-lg mb-4">
+                <input type="checkbox" name="my-accordion-2" checked="checked" class="peer"/>
+                <div class="d-collapse-title font-semibold">@service.Name</div>
+                <div class="d-collapse-content text-sm">
+                    <div class="p-y-2 leading-8">
+                        @((MarkupString)service.Description)
+                    </div>
+                    <div class="flex justify-center">
+                        <button class="btn btn-primarycol mt-4 max-w-sm">Get a quote</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>

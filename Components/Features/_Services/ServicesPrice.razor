@@ -1,0 +1,289 @@
+@using MudBlazor
+
+@code
+{
+    private readonly object[] ServiceList = new[]
+    {
+        new
+        {
+            icon = Icons.Material.Filled.AutoAwesome,
+            name = "Brand Essentials Package",
+            price = "£1,500 - £3,000",
+            duration = "3 - 4 weeks",
+            description = "Mini brand identity for startups or small businesses looking to launch quickly. Perfect for new brands or rebrands.",
+            features = new[]
+            {
+                new 
+                {
+                    name = "",
+                    featurelist = new[]
+                    {
+                        "Mini brand strategy & research",
+                        "Logo suite (primary, secondary, submark, logo mark)",
+                        "Typography & colour palette",
+                        "6 custom illustrations & pattern",
+                        "Basic A4 brand guidelines",
+                        "30-day support after launch"
+                    }
+                }
+                
+            },
+            popular = false
+        },
+        new
+        {
+            icon = Icons.Material.Filled.Star,
+            name = "Full Brand Experience",
+            price = "£5,000 - £15,000",
+            duration = "4 - 8 weeks",
+            description = "Comprehensive, strategy-led full brand identity. Ideal for growing businesses or rebrands that want depth and impact.",
+            features = new[]
+            {
+                new
+                {
+                    name = "",
+                    featurelist = new[]
+                    {
+                        "In-depth brand foundations (mission, vision, values)",
+                        "Audience profiles & buyer journey mapping",
+                        "Competitor & trend research",
+                        "Full logo suite, typography & palette",
+                        "Comprehensive A4 brand guidelines",
+                        "Mood boards, photography style & social media guidance",
+                        "Marketing collateral & full guideline deck",
+                        "90-day support after launch"
+                    }
+                }
+            },
+            popular = false
+        },
+        new
+        {
+            icon = Icons.Material.Filled.RocketLaunch,
+            name = "Website Design",
+            price = "£3,000 - £10,000",
+            duration = "2 - 6 weeks",
+            description = "Custom websites designed to showcase your brand and drive results. Perfect for businesses wanting a strong online presence.",
+            features = new[]
+            {
+                new
+                {
+                    name = "",
+                    featurelist = new[]
+                    {
+                        "Wix, Shopify, React or custom-coded HTML",
+                        "Responsive, mobile-first design",
+                        "Site structure & user journey planning",
+                        "Optional e-commerce setup",
+                        "Launch support & training"
+                    }
+                }
+            },
+            popular = false
+        }
+    };
+
+    private readonly object[] ServiceListDetailed = new[]
+    {
+        new
+        {
+            icon = Icons.Material.Filled.AutoAwesome,
+            name = "Brand Essentials Package",
+            price = "£1,500 - £3,000",
+            duration = "3 - 4 weeks",
+            description = "The Brand Essentials Package is a streamlined yet powerful solution for businesses who want to look professional and feel confident in their brand. Whether you’re creating a new brand or refreshing an existing one, this package delivers everything you need to launch with clarity.",
+            features = new[]
+            {
+                new
+                {
+                    name = "",
+                    featurelist = new[]
+                    {
+                        "Brand strategy session & mini research (goals, values, light audience profile, competitor snapshot, positioning, personality)",
+                        "Two mood boards to explore creative direction",
+                        "Typography system: primary, secondary, and supporting fonts",
+                        "Full colour palette: primary, secondary, and accent shades",
+                        "6 custom brand illustrations & a brand pattern",
+                        "2 rounds of revisions",
+                        "One-page A4 brand guidelines",
+                        "Essential file formats for digital & print",
+                        "30 days of post-project support"
+                    }
+                }
+            },
+            idealfor = "Perfect for those who need a brand identity that’s clear, consistent, and ready to roll out quickly.",
+            popular = false
+        },
+        new
+        {
+            icon = Icons.Material.Filled.Star,
+            name = "Full Brand Experience",
+            price = "£5,000 - £15,000",
+            duration = "4 - 8 weeks",
+            description = "This package is built for businesses serious about growth. It combines in-depth strategy with design to create a brand that doesn’t just look good but also connects with your audience and stands the test of time.",
+            features = new[]
+            {
+                new
+                {
+                    name = "Strategic Foundations",
+                    featurelist = new[]
+                    {
+                        "Purpose, mission, vision, and values",
+                        "Two detailed audience profiles (psychographics, pain points, buyer journey mapping from awareness → retention)",
+                        "Competitor and trend research, with competitive advantage analysis",
+                        "Brand personality, tone of voice, and key terminology",
+                    }
+                },
+                new
+                {
+                    name = "Visual Identity",
+                    featurelist = new[]
+                    {
+                        "Two highly detailed mood boards",
+                        "Logo suite (primary, secondary, submark, logo mark)",
+                        "Typography system & colour palette",
+                        "Photography style direction (aesthetic guidance, not shoot execution)",
+                        "Social media style guides & branded mockups",
+                    }
+                },
+                new
+                {
+                    name = "Collateral & Guidelines",
+                    featurelist = new[]
+                    {
+                        "Custom marketing collateral (e.g. business cards, packaging, menus, uniforms, flyers)",
+                        "One-page A4 brand sheet + comprehensive brand guideline deck",
+                        "90 days of post-project support",
+                    }
+                }
+            },
+            idealfor = "Ideal for businesses building their brand from scratch or repositioning with a rebrand, supported by robust strategy and real-world assets.",
+            popular = false
+        },
+        new
+        {
+            icon = Icons.Material.Filled.RocketLaunch,
+            name = "Website Design",
+            price = "£3,000 - £10,000",
+            duration = "2 - 6 weeks",
+            description = "Your website is often the first touchpoint for your audience, and it should feel like an extension of your brand. I design and build tailored websites to match your goals, whether you’re showcasing services, selling products, or building a platform.",
+            features = new[]
+            {
+                new
+                {
+                    name = "",
+                    featurelist = new[]
+                    {
+                        "Bespoke design in Wix, Shopify, or fully custom-coded HTML",
+                        "Strategic site structure for clear user journeys",
+                        "Mobile-first, responsive design",
+                        "Integrated brand look & feel",
+                        "Optional: e-commerce functionality (Shopify)",
+                        "Launch support & handover training",
+                    }
+                }
+            },
+            idealfor = "Best for businesses ready to expand their presence online with a site that looks great and works hard for them.",
+            popular = false
+        }
+    }; 
+}
+
+
+<div class="min-h-screen sm:px-6 lg:px-8">
+    <section class="py-20 px-4 ">
+        <div class="max-w-[70%] mx-auto text-center ">
+            <h1 class="text-4xl md:text-5xl font-bold mb-8">Choose Your <span
+                    class="bg-gradient-to-r from-primarycol to-secondarycol bg-clip-text text-transparent">Perfect
+                    Package</span></h1>
+            <p class="text-xl text-muted-foreground mx-auto mb-12">Each package is carefully
+                crafted to meet different business needs and budgets. All include my personal attention and
+                collaborative approach.</p>
+        </div>
+    </section>
+    <section class="py-12 px-4">
+        <div class="block lg:hidden max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 xl:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] grid-rows-[auto] gap-6">
+                @foreach (dynamic service in ServiceList)
+                {
+                <div class="grid row-span-7 grid-rows-subgrid rounded-lg border bg-card text-card-foreground shadow-sm relative ring-2 ring-primarycol hover:shadow-xl transition-all duration-300">
+                    <div class="grid row-span-4 grid-rows-subgrid text-center">
+                        <div class="w-16 h-16 mt-5 bg-gradient-to-r from-primarycol to-secondarycol rounded-full flex items-center justify-center mx-auto mb-4">
+                            <MudIcon Icon="@service.icon" Class="h-8 w-8" />
+                        </div>
+                        <h3 class=" mt-2 font-semibold tracking-tight text-2xl">@service.name</h3>
+                        <div class="mt-2 text-3xl font-bold text-brand-pink">@service.price</div>
+                        <p class="text-sm text-muted-foreground">@service.duration</p>
+                    </div>
+                    <div class="grid row-span-2 grid-rows-subgrid p-6 pt-6">
+                        <p class="text-muted-foreground mb-6">@service.description</p>
+                        <ul class="space-y-3 mb-8">
+                            @foreach (dynamic feature in service.features)
+                            {
+                                @if(feature.name != "")
+                                {
+                                    <h5 class="text-lg font-semibold mb-2">@feature.name</h5>
+                                }
+                                @foreach (dynamic featureitem in feature.featurelist)
+                                {
+                                    <li class="flex items-start space-x-3">
+                                        <span class="text-secondarycol">
+                                            <MudIcon Icon="@Icons.Material.Filled.Check" Class="h-5 w-5 mt-0.5 flex-shrink-0" />
+                                        </span>
+                                        <span class="text-sm">@featureitem</span>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </div>
+                    <div class="grid row-span-1 grid-rows-subgrid p-6 pt-0">
+                        <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primarycol text-white hover:shadow-lg hover:scale-105 transition-all duration-300 h-11 rounded-md px-8 w-full"
+                            href="/contact">Get a Quote</a>
+                    </div>
+                </div>
+                }
+            </div>
+        </div><div class="hidden lg:block max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 xl:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] grid-rows-[auto] gap-6">
+                @foreach (dynamic service in ServiceListDetailed)
+                {
+                <div class="grid row-span-7 grid-rows-subgrid rounded-lg border bg-card text-card-foreground shadow-[0_0_15px_rgba(0,0,0,0.1)] relative ring-2 ring-primarycol hover:ring-secondarycol hover:shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all duration-300">
+                    <div class="grid row-span-4 grid-rows-subgrid text-center">
+                        <div class="w-16 h-16 mt-5 bg-gradient-to-r from-primarycol to-secondarycol rounded-full flex items-center justify-center mx-auto mb-4">
+                            <MudIcon Icon="@service.icon" Class="h-8 w-8" />
+                        </div>
+                        <h3 class=" mt-2 font-semibold tracking-tight text-2xl">@service.name</h3>
+                        <div class="mt-2 text-3xl font-bold text-brand-pink">@service.price</div>
+                        <p class="text-sm text-muted-foreground">@service.duration</p>
+                    </div>
+                    <div class="grid row-span-2 grid-rows-subgrid p-6 pt-6">
+                        <p class="text-muted-foreground mb-6">@service.description</p>
+                        <ul class="space-y-3 mb-8">
+                            @foreach (dynamic feature in service.features)
+                            {
+                                @if(feature.name != "")
+                                {
+                                    <h5 class="text-lg font-semibold mb-2">@feature.name</h5>
+                                }
+                                @foreach (dynamic featureitem in feature.featurelist)
+                                {
+                                    <li class="flex items-start space-x-3">
+                                        <span class="text-secondarycol">
+                                            <MudIcon Icon="@Icons.Material.Filled.Check" Class="h-5 w-5 text-secondarycol mt-0.5 flex-shrink-0" />
+                                        </span>
+                                        <span class="text-sm">@featureitem</span>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </div>
+                    <div class="grid row-span-1 grid-rows-subgrid p-6 pt-0">
+                        <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primarycol text-white hover:shadow-lg hover:scale-105 transition-all duration-300 h-11 rounded-md px-8 w-full"
+                            href="/contact">Get a Quote</a>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+</div>
