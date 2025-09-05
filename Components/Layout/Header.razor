@@ -1,8 +1,3 @@
-/*
- * Rosie Taylor Branding
- * Header Component
- * This component renders the header with navigation and branding.
- */
 
 @using RosieTaylorBranding.Components.UI
 
@@ -29,7 +24,7 @@
 
         
 }
-<header class="fixed top-0 left-0 right-0 z-50 bg-base-950 backdrop-blur-md border-b h-16 shadow-md">
+<header class="fixed top-0 left-0 right-0 z-50 bg-back-100 backdrop-blur-lg backdrop-opacity-100 border-b h-16 shadow-md">
       <div class="container">
         <div class="flex items-center justify-between h-16">
           <div class="font-bold text-xl">
@@ -78,7 +73,7 @@
           <div class="flex items-center gap-4">
             <ThemeToggle />
             <button
-              class="hidden md:inline-flex btn-primarycol border-none"
+              class="btn btn-primarycol"
               size="sm"
             >
               Get Started

@@ -52,10 +52,10 @@
 <div class="container mx-auto px-4 py-12  ">
     @foreach(dynamic service in Services)
     {
-        <div class="d-collapse d-collapse-arrow bg-base border border-base-700 rounded-lg mb-4">
+        <div class="d-collapse d-collapse-arrow bg-base border border-base-300 rounded-lg mb-4">
             <input type="checkbox" name="my-accordion-2" class="peer"/>
             <div class="d-collapse-title font-semibold">@service.Name</div>
-            <div class="d-collapse-content text-sm bg-base-900 ">
+            <div class="d-collapse-content text-sm bg-base-100 ">
                 <div class="py-4">
                     <div class="py-2 leading-8">
                         @((MarkupString)service.Description)

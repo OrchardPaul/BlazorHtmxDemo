@@ -7,7 +7,7 @@
 6 silly config load:file:C:\Development\HTMX\RosieTaylorBranding\%USERPROFILE%\npm\etc\npmrc
 7 verbose title npm exec tailwindcss -i ./wwwroot/css/tailwind-input.css -o ./wwwroot/css/tailwind.css --watch --verbose
 8 verbose argv "exec" "--" "tailwindcss" "-i" "./wwwroot/css/tailwind-input.css" "-o" "./wwwroot/css/tailwind.css" "--watch" "--verbose"
-9 verbose logfile logs-max:10 dir:C:\Development\HTMX\RosieTaylorBranding\%USERPROFILE%\npm-cache\_logs\2025-09-04T13_10_05_946Z-
-10 verbose logfile C:\Development\HTMX\RosieTaylorBranding\%USERPROFILE%\npm-cache\_logs\2025-09-04T13_10_05_946Z-debug-0.log
+9 verbose logfile logs-max:10 dir:C:\Development\HTMX\RosieTaylorBranding\%USERPROFILE%\npm-cache\_logs\2025-09-05T11_23_23_132Z-
+10 verbose logfile C:\Development\HTMX\RosieTaylorBranding\%USERPROFILE%\npm-cache\_logs\2025-09-05T11_23_23_132Z-debug-0.log
 11 silly logfile start cleaning logs, removing 1 files
 12 silly logfile done cleaning log files
