@@ -12,3 +12,14 @@
 11 silly logfile start cleaning logs, removing 1 files
 12 silly logfile done cleaning log files
 13 http fetch GET 200 https://registry.npmjs.org/npm 878ms
+14 verbose cwd C:\Development\HTMX\RosieTaylorBranding
+15 verbose os Windows_NT 10.0.26100
+16 verbose node v22.12.0
+17 verbose npm  v10.9.0
+18 notice
+18 notice New [31mmajor[39m version of npm available! [31m10.9.0[39m -> [34m11.6.2[39m
+18 notice Changelog: [34mhttps://github.com/npm/cli/releases/tag/v11.6.2[39m
+18 notice To update run: [4mnpm install -g npm@11.6.2[24m
+18 notice  { force: true, [Symbol(proc-log.meta)]: true }
+19 verbose exit 134
+20 verbose code 134
