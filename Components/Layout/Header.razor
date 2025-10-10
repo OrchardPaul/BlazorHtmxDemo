@@ -5,16 +5,14 @@
 
 @code{
     private bool IsMenuOpen = false;
-    private readonly string Message = "Welcome to Rosie Taylor Branding!";
-
     private record NavItem(string Label, string Href);
     private readonly NavItem[] navItems = new[]
     {
-        new NavItem("About", "#about"),
-        new NavItem("Portfolio", "#portfolio"),
-        new NavItem("Process", "#process"),
-        new NavItem("Testimonials", "#testimonials"),
-        new NavItem("Contact", "/contact"),
+        new NavItem("Home", "/api/home"),
+        new NavItem("Services", "/api/services"),
+        new NavItem("Themes", "/api/themes"),
+        new NavItem("About", "/api/about"),
+        new NavItem("Contact", "/api/contact"),
     };
 
     private void SetIsMenuOpen(bool value)
@@ -36,38 +34,17 @@
 
           @* Desktop Navigation *@
           <nav class="hidden md:flex items-center space-x-8 text-foreground">
-            <a
-                hx-get="/api/home"
-                hx-target="#content"
-                hx-swap="innerHTML show:#content:top"
-                class=" hover:text-primarycol transition-colors font-medium"
-              >
-                Home
-              </a>
-              <a
-                hx-get="/api/services"
-                hx-target="#content"
-                hx-swap="innerHTML show:#content:top"
-                class=" hover:text-primarycol transition-colors font-medium"
-              >
-                Services
-              </a>
-              <a
-                hx-get="/api/about"
-                hx-target="#content"
-                hx-swap="innerHTML show:#content:top"
-                class=" hover:text-primarycol transition-colors font-medium"
-              >
-                About
-              </a>
-              <a
-                hx-get="/api/contact"
-                hx-target="#content"
-                hx-swap="innerHTML show:#content:top"
-                class=" hover:text-primarycol transition-colors font-medium"
-              >
-                Contact
-              </a>
+            @foreach (var item in navItems)
+              {
+                <a
+                  hx-get="@item.Href"
+                  hx-target="#content"
+                  hx-swap="innerHTML show:#content:top"
+                  class=" hover:text-primarycol transition-colors font-medium"
+                >
+                  @item.Label
+                </a>
+              }
           </nav>
 
           <div class="flex items-center gap-4">

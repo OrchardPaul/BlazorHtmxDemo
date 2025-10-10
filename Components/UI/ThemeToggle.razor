@@ -53,6 +53,14 @@ class ThemeToggle {
         this.saveToLocalStorage();
         
     }
+
+    setTheme(themeName) {
+        this.mode = themeName;
+        this.updateUI();
+        this.applyTheme();
+        this.saveToLocalStorage();
+        
+    }
     
     updateUI() {
         // Update icons
@@ -103,9 +111,29 @@ class ThemeToggle {
 
 }
 
+
+// Make ThemeToggle globally accessible and initialize
+function initializeThemeToggle() {
+    if (!window.themeToggle) {
+        window.themeToggle = new ThemeToggle();
+    }
+}
+
 // Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    new ThemeToggle();
-});
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeThemeToggle);
+} else {
+    // DOM is already loaded
+    initializeThemeToggle();
+}
+
+// Also provide a simple global function for convenience
+window.setTheme = function(themeName) {
+    if (window.themeToggle) {
+        window.themeToggle.setTheme(themeName);
+    } else {
+        console.warn('ThemeToggle not initialized yet');
+    }
+};
     
 </script>

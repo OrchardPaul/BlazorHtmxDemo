@@ -1,2 +1,6 @@
 ##run in new terminal to make sure css is updated when new classes are referenced
 npx tailwindcss -i ./wwwroot/css/tailwind-input.css -o ./wwwroot/css/tailwind.css --watch
+
+or
+
+npm run build-css

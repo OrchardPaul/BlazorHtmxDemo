@@ -13,7 +13,6 @@
         <PackageReference Include="Htmx" Version="1.6.1" />
         <PackageReference Include="Htmx.TagHelpers" Version="1.6.1" />
         <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
-        <PackageReference Include="MudBlazor" Version="8.11.0" />
     </ItemGroup>
 
 </Project>

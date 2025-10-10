@@ -51,8 +51,8 @@ body {
   --inputborderonfocus-l: 70%;
 
   /*Brand Colours     */
-  --primarycol: hsl(46, 62%, 40%);
-  --secondarycol: hsl(46, 62%, 60%);
+  --primarycol: hsl(330 100% 60%);
+  --secondarycol: hsl(200 100% 70%);
   --accentcol: hsl(340 100% 70%);
   --neutralcol: hsl(210 40% 96%);
   --base-h: 0;

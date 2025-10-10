@@ -1,0 +1,381 @@
+<div id="theme-color-picker" class="w-full max-w-md mx-auto p-6 bg-card rounded-lg border border-border shadow-sm">
+    <h3 class="text-lg font-semibold text-foreground mb-6">Custom Color Picker</h3>
+    
+    <!-- Color Preview -->
+    <div class="mb-6">
+        <div id="color-preview" 
+             class="w-full h-16 rounded-lg border border-border shadow-inner"
+             aria-label="Color preview">
+        </div>
+        <p id="color-values" class="text-sm text-muted-foreground mt-2 text-center">
+            HSL(280, 100%, 50%)
+        </p>
+    </div>
+
+    <!-- Hue Slider -->
+    <div class="mb-6">
+        <label for="hue-slider" class="block text-sm font-medium text-foreground mb-2">
+            Hue
+        </label>
+        <div class="relative">
+            <input type="range" 
+                   id="hue-slider"
+                   min="0" 
+                   max="360" 
+                   value="280"
+                   class="d-range d-range-primarycol w-full hue-slider ring-1 ring-gray-50"
+                   aria-label="Hue slider from 0 to 360 degrees">
+            
+            <!-- Slider Labels -->
+            <div class="flex justify-between text-xs text-muted-foreground mt-1">
+                <span>0°</span>
+                <span id="hue-value" class="font-medium">280°</span>
+                <span>360°</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Saturation Slider -->
+    <div class="mb-6">
+        <label for="saturation-slider" class="block text-sm font-medium text-foreground mb-2">
+            Saturation
+        </label>
+        <div class="relative">
+            <input type="range" 
+                   id="saturation-slider"
+                   min="0" 
+                   max="100" 
+                   value="100"
+                   class="d-range d-range-primarycol w-full saturation-slider ring-1 ring-gray-50 "
+                   aria-label="Saturation slider from 0 to 100 percent">
+            
+            <!-- Slider Labels -->
+            <div class="flex justify-between text-xs text-muted-foreground mt-1">
+                <span>0</span>
+                <span id="saturation-value" class="font-medium">100</span>
+                <span>100</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightness Slider -->
+    <div class="mb-6">
+        <label for="lightness-slider" class="block text-sm font-medium text-foreground mb-2">
+            Lightness
+        </label>
+        <div class="relative">
+            <input type="range" 
+                   id="lightness-slider"
+                   min="0" 
+                   max="100" 
+                   value="50"
+                   class="d-range d-range-primarycol w-full lightness-slider ring-1 ring-gray-50"
+                   aria-label="Lightness slider from 0 to 100 percent">
+            
+            <!-- Slider Labels -->
+            <div class="flex justify-between text-xs text-muted-foreground mt-1">
+                <span>0</span>
+                <span id="lightness-value" class="font-medium">50</span>
+                <span>100</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="flex gap-3">
+        <button id="apply-color-btn" 
+                class="d-btn d-btn-primarycol flex-1" 
+                aria-label="Apply the selected color">
+            Apply Color
+        </button>
+        <button id="reset-color-btn" 
+                class="d-btn d-btn-outline flex-1" 
+                aria-label="Reset color to default values">
+            Reset
+        </button>
+    </div>
+
+    
+</div>
+
+<style>
+/* Custom slider gradients */
+.hue-slider {
+    background: linear-gradient(to right, 
+        hsl(0, 100%, 50%), hsl(60, 100%, 50%), hsl(120, 100%, 50%), 
+        hsl(180, 100%, 50%), hsl(240, 100%, 50%), hsl(300, 100%, 50%), 
+        hsl(360, 100%, 50%)) !important;
+}
+
+.saturation-slider {
+    background: linear-gradient(to right, 
+        hsl(var(--current-hue, 280), 0%, var(--current-lightness, 50%)), 
+        hsl(var(--current-hue, 280), 100%, var(--current-lightness, 50%))) !important;
+}
+
+.lightness-slider {
+    background: linear-gradient(to right, 
+        hsl(var(--current-hue, 280), var(--current-saturation, 100%), 0%), 
+        hsl(var(--current-hue, 280), var(--current-saturation, 100%), 50%), 
+        hsl(var(--current-hue, 280), var(--current-saturation, 100%), 100%)) !important;
+}
+</style>
+
+<script>
+class ThemeColorPicker {
+    constructor() {
+        this.hue = 280;
+        this.saturation = 100;
+        this.lightness = 50;
+        
+        // Debounce timers
+        this.saveTimers = {
+            hue: null,
+            saturation: null,
+            lightness: null
+        };
+        
+        this.init();
+    }
+    
+    init() {
+        this.loadSavedValues();
+        this.bindEvents();
+        this.updateUI();
+    }
+    
+    loadSavedValues() {
+        // Load from localStorage if available
+        const savedHue = localStorage.getItem('theme-color-hue');
+        const savedSaturation = localStorage.getItem('theme-color-saturation');
+        const savedLightness = localStorage.getItem('theme-color-lightness');
+        
+        if (savedHue) this.hue = parseInt(savedHue);
+        if (savedSaturation) this.saturation = parseInt(savedSaturation);
+        if (savedLightness) this.lightness = parseInt(savedLightness);
+        
+        // Update slider values
+        document.getElementById('hue-slider').value = this.hue;
+        document.getElementById('saturation-slider').value = this.saturation;
+        document.getElementById('lightness-slider').value = this.lightness;
+    }
+    
+    bindEvents() {
+        // Hue slider events
+        const hueSlider = document.getElementById('hue-slider');
+        hueSlider.addEventListener('input', (e) => this.onHueChange(e));
+        hueSlider.addEventListener('change', (e) => this.onHueChangeComplete(e));
+        
+        // Saturation slider events
+        const saturationSlider = document.getElementById('saturation-slider');
+        saturationSlider.addEventListener('input', (e) => this.onSaturationChange(e));
+        saturationSlider.addEventListener('change', (e) => this.onSaturationChangeComplete(e));
+        
+        // Lightness slider events
+        const lightnessSlider = document.getElementById('lightness-slider');
+        lightnessSlider.addEventListener('input', (e) => this.onLightnessChange(e));
+        lightnessSlider.addEventListener('change', (e) => this.onLightnessChangeComplete(e));
+        
+        // Button events
+        document.getElementById('apply-color-btn').addEventListener('click', () => this.applyColor());
+        document.getElementById('reset-color-btn').addEventListener('click', () => this.resetColor());
+    }
+    
+    onHueChange(e) {
+        this.hue = parseInt(e.target.value);
+        this.updateUI();
+    }
+    
+    onHueChangeComplete(e) {
+        this.debounceStore('hue', this.hue, 'theme-color-hue');
+    }
+    
+    onSaturationChange(e) {
+        this.saturation = parseInt(e.target.value);
+        this.updateUI();
+    }
+    
+    onSaturationChangeComplete(e) {
+        this.debounceStore('saturation', this.saturation, 'theme-color-saturation');
+    }
+    
+    onLightnessChange(e) {
+        this.lightness = parseInt(e.target.value);
+        this.updateUI();
+    }
+    
+    onLightnessChangeComplete(e) {
+        this.debounceStore('lightness', this.lightness, 'theme-color-lightness');
+    }
+    
+    debounceStore(type, value, storageKey) {
+        // Clear existing timer
+        if (this.saveTimers[type]) {
+            clearTimeout(this.saveTimers[type]);
+        }
+        
+        // Set new timer for 0.5 seconds
+        this.saveTimers[type] = setTimeout(() => {
+            localStorage.setItem(storageKey, value.toString());
+            console.log(`Saved ${type}: ${value}`);
+            
+            // Dispatch custom event for other components
+            window.dispatchEvent(new CustomEvent('themeColorChanged', {
+                detail: { type, value, hsl: this.getHSL() }
+            }));
+        }, 500);
+    }
+    
+    updateUI() {
+        const colorString = `hsl(${this.hue}, ${this.saturation}%, ${this.lightness}%)`;
+        
+        // Update color preview
+        document.getElementById('color-preview').style.backgroundColor = colorString;
+        
+        // Update value displays
+        document.getElementById('hue-value').textContent = `${this.hue}°`;
+        document.getElementById('saturation-value').textContent = this.saturation;
+        document.getElementById('lightness-value').textContent = this.lightness;
+        
+        // Update color information
+        document.getElementById('color-values').textContent = `HSL(${this.hue}, ${this.saturation}%, ${this.lightness}%)`;
+        
+        // Update CSS custom properties for slider gradients
+        document.documentElement.style.setProperty('--current-hue', this.hue);
+        document.documentElement.style.setProperty('--current-saturation', this.saturation + '%');
+        document.documentElement.style.setProperty('--current-lightness', this.lightness + '%');
+        
+        // Update slider backgrounds
+        this.updateSliderBackgrounds();
+    }
+    
+    updateSliderBackgrounds() {
+        const saturationSlider = document.querySelector('.saturation-slider');
+        const lightnessSlider = document.querySelector('.lightness-slider');
+        
+        // Update saturation slider gradient
+        saturationSlider.style.background = `linear-gradient(to right, 
+            hsl(${this.hue}, 0%, ${this.lightness}%), 
+            hsl(${this.hue}, 100%, ${this.lightness}%))`;
+        
+        // Update lightness slider gradient
+        lightnessSlider.style.background = `linear-gradient(to right, 
+            hsl(${this.hue}, ${this.saturation}%, 0%), 
+            hsl(${this.hue}, ${this.saturation}%, 50%), 
+            hsl(${this.hue}, ${this.saturation}%, 100%))`;
+    }
+    
+    applyColor() {
+        const colorString = `hsl(${this.hue}, ${this.saturation}%, ${this.lightness}%)`;
+
+        const base100 = this.lightness + (this.lightness < 50 ? 4 : -4);
+        const base200 = this.lightness + (this.lightness < 50 ? 8 : -8);
+        const base300 = this.lightness + (this.lightness < 50 ? 12 : -12);
+        const base400 = this.lightness + (this.lightness < 50 ? 20 : -20);
+        const base500 = this.lightness + (this.lightness < 50 ? 28 : -28);
+        
+        // Apply to global theme system if available
+        if (window.themeToggle) {
+            document.documentElement.style.setProperty('--background', `hsl(${this.hue}, ${this.saturation}%, ${this.lightness}%)`);
+            document.documentElement.style.setProperty('--base', `hsl(${this.hue}, ${this.saturation}%, ${this.lightness}%)`);
+            document.documentElement.style.setProperty('--base-100', `hsl(${this.hue}, ${this.saturation}%, ${base100}%)`);
+            document.documentElement.style.setProperty('--base-200', `hsl(${this.hue}, ${this.saturation}%, ${base200}%)`);
+            document.documentElement.style.setProperty('--base-300', `hsl(${this.hue}, ${this.saturation}%, ${base300}%)`);
+            document.documentElement.style.setProperty('--base-400', `hsl(${this.hue}, ${this.saturation}%, ${base400}%)`);
+            document.documentElement.style.setProperty('--base-500', `hsl(${this.hue}, ${this.saturation}%, ${base500}%)`);
+            document.documentElement.style.setProperty('--card', `hsl(${this.hue}, ${this.saturation}%, ${this.lightness}%)`);
+        }
+        
+        // Save immediately (bypass debounce)
+        localStorage.setItem('theme-color-hue', this.hue.toString());
+        localStorage.setItem('theme-color-saturation', this.saturation.toString());
+        localStorage.setItem('theme-color-lightness', this.lightness.toString());
+        
+        // Apply to current theme
+        localStorage.setItem('applied-custom-color', colorString);
+        
+        // Dispatch apply event
+        window.dispatchEvent(new CustomEvent('themeColorApplied', {
+            detail: { color: colorString, hsl: this.getHSL() }
+        }));
+        
+        // Show feedback
+        this.showFeedback('Color applied successfully!');
+        
+        console.log(`Applied color: ${colorString}`);
+    }
+    
+    resetColor() {
+        this.hue = 280;
+        this.saturation = 100;
+        this.lightness = 50;
+        
+        // Update sliders
+        document.getElementById('hue-slider').value = this.hue;
+        document.getElementById('saturation-slider').value = this.saturation;
+        document.getElementById('lightness-slider').value = this.lightness;
+        
+        // Clear localStorage
+        localStorage.removeItem('theme-color-hue');
+        localStorage.removeItem('theme-color-saturation');
+        localStorage.removeItem('theme-color-lightness');
+        localStorage.removeItem('applied-custom-color');
+        
+        this.updateUI();
+        
+        // Dispatch reset event
+        window.dispatchEvent(new CustomEvent('themeColorReset', {
+            detail: { hsl: this.getHSL() }
+        }));
+        
+        this.showFeedback('Color reset to default');
+        
+        console.log('Color reset to default values');
+    }
+    
+    getHSL() {
+        return {
+            hue: this.hue,
+            saturation: this.saturation,
+            lightness: this.lightness,
+            css: `hsl(${this.hue}, ${this.saturation}%, ${this.lightness}%)`
+        };
+    }
+    
+    showFeedback(message) {
+        // Create temporary feedback notification
+        const feedback = document.createElement('div');
+        feedback.textContent = message;
+        feedback.className = 'fixed top-4 right-4 bg-primarycol text-white px-4 py-2 rounded shadow-lg z-50 transition-opacity duration-300';
+        
+        document.body.appendChild(feedback);
+        
+        // Fade out and remove after 2 seconds
+        setTimeout(() => {
+            feedback.style.opacity = '0';
+            setTimeout(() => {
+                if (feedback.parentNode) {
+                    document.body.removeChild(feedback);
+                }
+            }, 300);
+        }, 2000);
+    }
+}
+
+// Initialize when DOM is ready
+function initThemeColorPicker() {
+    if (document.getElementById('theme-color-picker') && !window.themeColorPicker) {
+        window.themeColorPicker = new ThemeColorPicker();
+    }
+}
+
+// Initialize immediately if DOM is ready, otherwise wait for DOMContentLoaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initThemeColorPicker);
+} else {
+    initThemeColorPicker();
+}
+
+// Also initialize when this script loads (for HTMX scenarios)
+initThemeColorPicker();
+</script>

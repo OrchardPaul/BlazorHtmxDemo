@@ -5,9 +5,9 @@
 4 silly config load:file:C:\Development\HTMX\RosieTaylorBranding\.npmrc
 5 silly config load:file:C:\Users\ptayl\.npmrc
 6 silly config load:file:C:\Development\HTMX\RosieTaylorBranding\%USERPROFILE%\npm\etc\npmrc
-7 verbose title npm exec tailwindcss -i ./wwwroot/css/tailwind-input.css -o ./wwwroot/css/tailwind.css --watch --verbose
-8 verbose argv "exec" "--" "tailwindcss" "-i" "./wwwroot/css/tailwind-input.css" "-o" "./wwwroot/css/tailwind.css" "--watch" "--verbose"
-9 verbose logfile logs-max:10 dir:C:\Development\HTMX\RosieTaylorBranding\%USERPROFILE%\npm-cache\_logs\2025-09-05T11_23_23_132Z-
-10 verbose logfile C:\Development\HTMX\RosieTaylorBranding\%USERPROFILE%\npm-cache\_logs\2025-09-05T11_23_23_132Z-debug-0.log
+7 verbose title npm run build-css
+8 verbose argv "run" "build-css"
+9 verbose logfile logs-max:10 dir:C:\Development\HTMX\RosieTaylorBranding\%USERPROFILE%\npm-cache\_logs\2025-09-08T19_36_18_330Z-
+10 verbose logfile C:\Development\HTMX\RosieTaylorBranding\%USERPROFILE%\npm-cache\_logs\2025-09-08T19_36_18_330Z-debug-0.log
 11 silly logfile start cleaning logs, removing 1 files
 12 silly logfile done cleaning log files
